@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang=en-us>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>In Canvas</title>
+    <meta name="keywords" content="custom canvas, marine canvas, industrial canvas, marine grade carpet, marine upholstery, bimini, side curtains, dodger, sail cover, boat cover, mooring cover, tonneau, bow cover, camper back, slant back, Puget Sound, Iosso products, washington, everett, edmonds, seattle, custom canvas products, highway 99, hwy 99">
+    <meta name="description" content="In Canvas manufactures the highest quality custom canvas products available for marine, commercial, and industrial applications. We serve customers throughout the Puget Sound area from our facility in Everett, WA.">
+    <link rel="icon" type="image/png" href="images/logos/incanvas/favicon.png">
+    <link rel="stylesheet" href="dist/css/style.min.css">
+    <!-- Facebook Share Photo -->
+    <meta property="og:image" content="images/logos/incanvas/favicon.png">
+    <meta property="og:image:secure_url" content="images/logos/incanvas/favicon.png">
+  </head>
+  <body>
+    <nav>
+      <div class="contents">
+        <div class="menu desktop close">
+          <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul>
+            <a class="logo-wrapper" href="index.html">
+              <img class="logo" src="images/logos/incanvas/InCanvas_logo.svg">
+            </a>
+            <li><a href="directory/marine.html">Marine</a></li>
+            <li><a href="directory/upholstery.html">Upholstery</a></li>
+            <li><a href="directory/industrial.html">Industrial</a></li>
+            <li><a href="directory/products.html">Products</a></li>
+            <li><a href="directory/contact.html">Contact Us</a>
+              <span class="social-wrapper">
+                <a class="social-logo" href="https://www.facebook.com/In-Canvas-281851358515513/timeline/">
+                  <img class="social-logo" src="images/logos/social/facebook_logo.svg">
+                </a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="hero">
+      <div id="carousel" class="owl-carousel owl-theme">
+        <div class="hero-image1">
+          <header>
+            <!-- <h1>In Canvas</h1> -->
+            <h3><span>Custom Marine and Industrial Canvas Products</span></h3>
+          </header>
+        </div>
+        <div class="hero-image2">
+          <header>
+            <h3><span>30+ Years of Experience</span></h3>
+          </header>
+        </div>
+        <div class="hero-image3">
+          <header>
+            <h3><span>Designed to Your Specifications</span></h3>
+          </header>
+        </div>
+      </div>
+      <div class="scroll-down-wrapper">
+        <a class="scroll-down" href="#main">
+      </a>
+    </section>
+    <main class="main front-page" id="main">
+      <article class="about-us">
+        <h1>About Us</h1>
+        <p class="grabber"><b>In Canvas</b> manufactures custom designed and sewn canvas products.</p>
+        <div class="hr"></div>
+        <p>
+          We have over 30 years experience in the field and offer exceptional craftsmanship. All of our products are fully guaranteed to meet customer expectations. We offer custom canvas covers for the marine industry, industrial/commercial applications, upholstery, and marine grade carpeting.
+        </p>
+      </article>
+      <article class="materials">
+        <h1>We Recommend:</h1>
+        <p>All of our products are made with the highest quality materials</p>
+        <section>
+          <a href="http://www.sunbrella.com/en_us/" target="_blank"><div class="logo-background"><img src="images/logos/suppliers/Sunbrella_Logo.png"></div></a>
+          <a href="http://www.gore.com/en_xx/products/fibers/sewingthreadoutdoor/sewingthreadoutdoor.html" target="_blank"><img src="images/logos/suppliers/Gore_Logo.gif"></a>
+          <a href="http://www.strataglass.com/" target="_blank"><img src="images/logos/suppliers/Strataglass_Logo.png"></a>
+          <a href="https://www.corinthian-marine-carpet.com/" target="_blank"><img src="images/logos/suppliers/Corinthian_Logo.png"></a>
+          <a href="http://www.rainierwindows.com/" target="_blank"><img src="images/logos/suppliers/Rainier_Logo.png"></a>
+        </section>
+      </article>
+    </main>
+    <footer class="footer front-page">
+      <p>12428 Hwy. 99, Unit 46, Everett, WA 98204-5502 | 425-355-4102 <span class="divider">|</span> <span class="new-line">Copyright &#169; 2016 In Canvas LLC. All Rights Reserved.<span>
+      </p>
+    </footer>
+  </body>
+  <link rel="stylesheet" href="dist/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="dist/owl-carousel/owl.theme.css">
+  <script src="dist/js/jquery-2.1.4.min.js"></script>
+  <script src="dist/js/script.js"></script>
+  <script src="dist/owl-carousel/owl.carousel.min.js"></script>
+  <script>
+    $("#carousel").owlCarousel({
+      navigation : false, // Show next and prev buttons
+      slideSpeed : 500, //miliseconds
+      paginationSpeed : 400, //miliseconds
+      responsiveRefreshRate: 100,
+      autoPlay : 5000, //miliseconds
+      singleItem: true
+    });
+    //on-view scroll animation
+    var $about = $('.about-us');
+    var $materials = $('.materials');
+    var $window = $(window);
+    var window_top_position = $window.scrollTop();
+    var element_heights = [$about.outerHeight(),
+                $materials.outerHeight()];
+    function check_if_in_view() {
+      window_top_position = $window.scrollTop();
+      if (window_top_position >= element_heights[0] / 2.0 || $('.menu').hasClass('mobile')) {
+        $about.addClass('in-view');
+        $materials.addClass('in-view');
+      } else if (window_top_position == 0) {
+        $about.removeClass('in-view');
+        $materials.removeClass('in-view');
+      }
+    }
+    $window.on('scroll resize load', check_if_in_view);
+    $window.trigger('scroll');
+  </script>
+</html>
